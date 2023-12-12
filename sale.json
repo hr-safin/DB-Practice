@@ -1,0 +1,63 @@
+[
+    {
+    
+      "quantity": 5,
+      "price": 26,
+      "targetPrice": 150
+    },
+    {
+      
+      "quantity": 10,
+      "price": 16,
+      "targetPrice": 320
+    },
+    {
+     
+      "quantity": 3,
+      "price": 51,
+      "targetPrice": 250
+    },
+    {
+      
+      "quantity": 8,
+      "price": 30,
+      "targetPrice": 180
+    },
+    {
+      
+      "quantity": 12,
+      "price": 11,
+      "targetPrice": 420
+    },
+    {
+      
+      "quantity": 6,
+      "price": 40,
+      "targetPrice": 130
+    },
+    {
+      
+      "quantity": 4,
+      "price": 19,
+      "targetPrice": 370
+    },
+    {
+      
+      "quantity": 5,  
+      "price": 23,
+      "targetPrice": 200
+    },
+    {
+      
+      "quantity": 3,  
+      "price": 61,
+      "targetPrice": 450
+    },
+    {
+      
+      "quantity": 9,
+      "price": 12,
+      "targetPrice": 300
+    }
+  ]
+  
