@@ -42,15 +42,16 @@ db.documentCollection.aggregate([
     }
 ])
 
+
 db.documentCollection.aggregate([
     {
-        $project  : {
-            "name" : 1 ,
+        $project : {
+            "name" : 1,
             "HigherScore" : {
                 $filter : {
                     input : "$values",
                     as : "val",
-                    cond : {$gte : ["val", 70]}
+                    cond : {$gte : ["$$val", 50]}
                 }
             }
         }
