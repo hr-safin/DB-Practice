@@ -32,3 +32,76 @@ db.favCollection.aggregate([
         $unwind : "$favColor"
     }
 ])
+
+
+db.favCollection.aggregate([
+  {
+      "name" : "Charlie"
+  },
+  {
+    $addToSet : {"favColor" : "#cc0000" }
+  }
+])
+
+db.favCollection.aggregate([
+  {
+    $match : {name : "Charlie"}
+  },
+  {
+    $addToSet : {"favColor" : "cc0000"}
+  }
+])
+
+
+
+db.favCollection.aggregate([
+  {
+    $project : {
+      "name" : 1,
+      "NumberOfColors" : {$size : "$favColor"}
+    }
+  }
+])
+
+// $size in mongodb pipeline
+db.favCollection.aggregate([
+  {
+    $project : {
+      "name" : 1,
+      "NumberOfColors" : {$size : "$favColor"}
+    }
+  }
+])
+
+
+// $limit in aggregation pipeline 
+
+db.favCollection.aggregate([
+  {
+    $project : {
+      "name" : 1,
+      "NumberOfColors" : {$size : "$favColor"}
+    }
+  },
+  {
+
+   $limit : 2
+  }
+])
+
+db.favCollection.aggregate(
+  [
+    {
+      $project : {
+        "name" : 1,
+        "NumberOfColors" : {$size : "$favColor"}
+      }
+    },
+    {
+      $skip : 2
+    },
+    {
+      $limit : 2 
+    }
+  ]
+)
