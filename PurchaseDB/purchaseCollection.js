@@ -194,3 +194,25 @@ db.purchaseCollection.aggregate([
 
 
 
+// price will be greater than 800 then group them then find total count, total price average after that do sorting by total price
+
+
+db.purchaseCollection.aggregate([
+    {
+        $match : {"price" : {$gt : 800}}
+    },
+    {
+        $group : {
+            "_id" : "$user_email",
+            "TotalCount" : {$sum : 1},
+            "TotalPrice" : {$sum : "$price"},
+            "Average" : {$avg : "$price"}
+        }
+    },
+    {
+        $sort : {"TotalPrice" : -1}
+    }
+])
+
+
+
